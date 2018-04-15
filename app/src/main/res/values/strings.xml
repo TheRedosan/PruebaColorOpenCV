@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prueba putos colores</string>
+    <string name="coordenadas">X: 0, Y: 0</string>
+    <string name="color">Color Hex:  Color RGB:</string>
+    <string name="muestra">Color Identificado:</string>
+    <string name="complementario">Color complementario:</string>
+    <string name="title_activity_triada">TriadaActivity</string>
+</resources>
