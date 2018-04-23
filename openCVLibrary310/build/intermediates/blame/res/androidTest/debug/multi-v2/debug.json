@@ -1,6 +1,10 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\Carmen\\Desktop\\PruebaColorOpenCV\\openCVLibrary310\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
+            "map": []
+        },
+        {
             "outputFile": "C:\\Users\\alvar\\Desktop\\PruebaColorOpenCV\\openCVLibrary310\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
             "map": []
         },

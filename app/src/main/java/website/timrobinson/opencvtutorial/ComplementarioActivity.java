@@ -23,9 +23,7 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
-import java.sql.SQLOutput;
-
-public class MainActivity extends AppCompatActivity implements OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
+public class ComplementarioActivity extends AppCompatActivity implements OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
 
     //--- VARIABLES Y CONSTANTES -------------------------------------------------------------------
 
@@ -73,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_complementario);
 
         //Mantiene la pantalla encendida.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -210,18 +208,18 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
 
         //-------------------------------------------------------
 
-        float[] tHSL1 = tHSL;
-        //float[] tHSL2 = tHSL;
-
-
-        if (tHSL1[0]+125.0 > 360){
-            tHSL1[0] = (tHSL1[0] + 125) % 360;
-        }else{
-            tHSL1[0]+= 125;
-        }
-
-        int rgbTriada1 = ColorUtils.HSLToColor(tHSL1);
-        //int rgbTriada2 = ColorUtils.HSLToColor(tHSL2);
+//        float[] tHSL1 = tHSL;
+//        //float[] tHSL2 = tHSL;
+//
+//
+//        if (tHSL1[0]+125.0 > 360){
+//            tHSL1[0] = (tHSL1[0] + 125) % 360;
+//        }else{
+//            tHSL1[0]+= 125;
+//        }
+//
+//        int rgbTriada1 = ColorUtils.HSLToColor(tHSL1);
+//        //int rgbTriada2 = ColorUtils.HSLToColor(tHSL2);
 
 
 
@@ -421,7 +419,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
                     OpenCvCamara.enableView();
 
                     //Se añade a esta un touch listener, implementado en esta misma clase.
-                    OpenCvCamara.setOnTouchListener(MainActivity.this);
+                    OpenCvCamara.setOnTouchListener(ComplementarioActivity.this);
 
                 }
                 break;
