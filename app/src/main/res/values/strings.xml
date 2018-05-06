@@ -5,6 +5,10 @@
     <string name="muestra">Color Identificado:</string>
     <string name="triada1">Color Triada 1:</string>
     <string name="triada2">Color Triada 2:</string>
+    <string name="color1">Color 1:</string>
+    <string name="color2">Color 2:</string>
+    <string name="color3">Color 3:</string>
+    <string name="color4">Color 4:</string>
     <string name="complementario">Color complementario:</string>
     <string name="title_activity_triada">TriadaActivity</string>
     <string name="title_activity_main">MainActivity</string>
