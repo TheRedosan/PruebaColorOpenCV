@@ -16,14 +16,15 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ComplementarioActivity"></activity>
+        <activity android:name=".ComplementarioActivity" />
         <activity
             android:name=".TriadaActivity"
-            android:label="@string/title_activity_triada"></activity>
-        <activity android:name=".ComplementariaPorSeparadoActivity">
+            android:label="@string/title_activity_triada" />
+        <activity android:name=".ComplementariaPorSeparadoActivity" />
+        <activity android:name=".AnalogaActivity">
 
         </activity>
-        <activity android:name=".AnalogaActivity">
+        <activity android:name=".TetradaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

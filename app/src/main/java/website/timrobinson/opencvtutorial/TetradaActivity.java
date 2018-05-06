@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -23,7 +22,7 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
-public class ComplementarioActivity extends AppCompatActivity implements OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
+public class TetradaActivity extends AppCompatActivity implements View.OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
 
     //--- VARIABLES Y CONSTANTES -------------------------------------------------------------------
 
@@ -43,9 +42,13 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
 
     //TV para el color identificado.
     TextView tvMuestra;
-    TextView tvComplementario;
+    TextView tvColor1;
+    TextView tvColor2;
+    TextView tvColor3;
     TextView muestra;
-    TextView complementario;
+    TextView color1;
+    TextView color2;
+    TextView color3;
 
     //TV para la muestra del color.
     TextView tvTouchColor;
@@ -71,7 +74,7 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complementario);
+        setContentView(R.layout.activity_tetrada);
 
         //Mantiene la pantalla encendida.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -80,9 +83,13 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
         tvTouchCoordenadas = (TextView) findViewById(R.id.tvCoordenadas);
         tvTouchColor = (TextView) findViewById(R.id.tvColor);
         tvMuestra = (TextView) findViewById(R.id.tvMuestra);
-        tvComplementario = (TextView) findViewById(R.id.tvComplementario);
+        tvColor1 = (TextView) findViewById(R.id.tvColor1);
+        tvColor2 = (TextView) findViewById(R.id.tvColor2);
+        tvColor3 = (TextView) findViewById(R.id.tvColor3);
         muestra = (TextView) findViewById(R.id.muestra);
-        complementario = (TextView) findViewById(R.id.complementario);
+        color1 = (TextView) findViewById(R.id.color1);
+        color2 = (TextView) findViewById(R.id.color2);
+        color3 = (TextView) findViewById(R.id.color3);
 
         //Inicializa la camara de OpenCV.
         OpenCvCamara = (CameraBridgeViewBase) findViewById(R.id.opencvCamara);
@@ -204,28 +211,70 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
 
         ColorUtils.RGBToHSL((int)r, (int)g, (int)b, tHSL);
 
+
+
         //-------------------------------------------------------
+        //El primer color que obtenemos es el complementario de la muestra
+        float hue=0;
+        float analogoTetrada2=0;
+        hue = tHSL[0];
+
         if (tHSL[0]+180.0 > 360){
             tHSL[0] = (tHSL[0] + 180) % 360;
         }else{
             tHSL[0]+= 180;
         }
 
-        int rgbComplementario = ColorUtils.HSLToColor(tHSL);
+        int tetrada1 = ColorUtils.HSLToColor(tHSL);
+        String rgb1 = Color.red(tetrada1)+", "+Color.green(tetrada1)+", "+Color.blue(tetrada1);
+        System.out.println(rgb1);
 
-        complementario.setBackgroundColor(rgbComplementario);
+        //A continuación, partiendo otra vez de la muestra, dejamos un espacio en blanco en el círculo
+        //cromático, y obtenemos el segundo color a evaluar
 
-        complementario.setText(Integer.toString(rgbComplementario));
+        tHSL[0] = hue;
+
+        if (tHSL[0]+ 60.0 > 360){
+            tHSL[0] = (tHSL[0] + 60) % 360;
+        }else{
+            tHSL[0]+= 60.0;
+        }
+        analogoTetrada2 = tHSL[0];
+
+        int tetrada2 = ColorUtils.HSLToColor(tHSL);
+        String rgb2 = Color.red(tetrada2)+", "+Color.green(tetrada2)+", "+Color.blue(tetrada2);
+        System.out.println(rgb2);
+
+        //Finalmente, hacemos el complementario del obtenido en el paso anterior
+        tHSL[0] = analogoTetrada2;
+
+        if (tHSL[0]+180.0 > 360){
+            tHSL[0] = (tHSL[0] + 180) % 360;
+        }else{
+            tHSL[0]+= 180;
+        }
+
+        int tetrada3 = ColorUtils.HSLToColor(tHSL);
+        String rgb3 = Color.red(tetrada3)+", "+Color.green(tetrada3)+", "+Color.blue(tetrada3);
+        System.out.println(rgb3);
 
         muestra.setText(rgb);
-        muestra.setTextColor(rgbComplementario);
+        muestra.setTextColor(tetrada1);
 
-        complementario.setText(Color.red(rgbComplementario)+", "+Color.green(rgbComplementario)+", "+Color.blue(rgbComplementario));
-        complementario.setTextColor(Color.rgb((int)r, (int)g, (int)b));
+        color1.setBackgroundColor(tetrada1);
+        color1.setText(Color.red(tetrada1)+", "+Color.green(tetrada1)+", "+Color.blue(tetrada1));
+        color1.setTextColor(tetrada2);
+
+        color2.setBackgroundColor(tetrada2);
+        color2.setText(Color.red(tetrada2)+", "+Color.green(tetrada2)+", "+Color.blue(tetrada2));
+        color2.setTextColor(tetrada3);
+
+        System.out.println(tetrada3);
+        color3.setBackgroundColor(tetrada3);
+        color3.setText(Color.red(tetrada3)+", "+Color.green(tetrada3)+", "+Color.blue(tetrada3));
+        color3.setTextColor(Color.rgb((int)r, (int)g, (int)b));
 
         System.out.println();
-
-        //complementario.setBackgroundColor(rgbComplementario);
 
         System.out.println();
         return false;
@@ -257,78 +306,6 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
 
         return Integer.toString(r)+", "+Integer.toString(g)+", "+Integer.toString(b);
     }
-
-
-//    //Convierte RGB a HSL
-//    private int complementario(double r, double g, double b) {
-//
-//        //Valores HSL
-//        double hTono = 0;
-//        double sSaturacion;
-//        double lLuz;
-//
-//        /*Valores RGB partidos de 255. Obtenidos valores decimales para trabajar
-//        con la conversión a HSL.*/
-//        double rHSL = r / 255;
-//        double gHSL = g / 255;
-//        double bHSL = b / 255;
-//
-//        /*Se obtiene el máximo y el minimo de ellos*/
-//        double max = Math.max(rHSL, Math.max(gHSL, bHSL));
-//        double min = Math.min(rHSL, Math.min(gHSL, bHSL));
-//
-//        /*Y la diferencia entre ambos*/
-//        double variacion = max - min;
-//
-//        System.out.println("Maximo: "+max + " -- Minimo: " + min + " -- Variación: " + variacion);
-//
-//        //--- Tono ------------------------------------------------------------
-//        if (variacion == 0.0) {
-//            hTono = 0.0;
-//        } else if (max == rHSL) {
-//            hTono = 60 * ((gHSL - bHSL) / variacion % 6);
-//        } else if (max == gHSL) {
-//            hTono = 60 * ((bHSL - rHSL) / variacion + 2);
-//        } else if (max == bHSL) {
-//            hTono = 60 * ((rHSL - gHSL) / variacion + 4);
-//        }
-//
-//        System.out.println("H: " + hTono);
-//
-//        //--- Luz --------------------------------------------------------------
-//        lLuz = (1.0 / 3.0) * (rHSL + gHSL + bHSL);
-//
-//        System.out.println("L: " + lLuz * 100);
-//
-//        lLuz = (max + min) / 2;
-//
-//        System.out.println("L: " + lLuz * 100);
-//
-//        //--- Saturación -------------------------------------------------------
-//        if (variacion == 0.0) {
-//            sSaturacion = 0.0;
-//        } else {
-//            sSaturacion = variacion / (1 - Math.abs(2 * lLuz - 1));
-//        }
-//
-//        System.out.println("S: " + sSaturacion * 100);
-//
-//        return ColorUtils.HSLToColor(new float[]{(float)hTono, (float)sSaturacion, (float)lLuz});
-//
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     //--- OTROS METODOS ----------------------------------------------------------------------------
@@ -397,7 +374,7 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
                     OpenCvCamara.enableView();
 
                     //Se añade a esta un touch listener, implementado en esta misma clase.
-                    OpenCvCamara.setOnTouchListener(ComplementarioActivity.this);
+                    OpenCvCamara.setOnTouchListener(TetradaActivity.this);
 
                 }
                 break;
@@ -408,5 +385,4 @@ public class ComplementarioActivity extends AppCompatActivity implements OnTouch
             }
         }
     };
-
 }

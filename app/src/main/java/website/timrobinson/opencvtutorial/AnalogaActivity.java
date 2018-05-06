@@ -76,7 +76,7 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_triada);
+        setContentView(R.layout.activity_analoga);
 
         //Mantiene la pantalla encendida.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -228,6 +228,8 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
         }
 
         int analogo1 = ColorUtils.HSLToColor(tHSL);
+        String rgb1 = Color.red(analogo1)+", "+Color.green(analogo1)+", "+Color.blue(analogo1);
+        System.out.println(rgb1);
 
         tHSL[0] = hue;
 
@@ -238,6 +240,8 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
         }
 
         int analogo2 = ColorUtils.HSLToColor(tHSL);
+        String rgb2 = Color.red(analogo2)+", "+Color.green(analogo2)+", "+Color.blue(analogo2);
+        System.out.println(rgb2);
 
         tHSL[0] = hue;
 
@@ -248,6 +252,8 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
         }
 
         int analogo3 = ColorUtils.HSLToColor(tHSL);
+        String rgb3 = Color.red(analogo3)+", "+Color.green(analogo3)+", "+Color.blue(analogo3);
+        System.out.println(rgb3);
 
         tHSL[0] = hue;
 
@@ -258,6 +264,8 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
         }
 
         int analogo4 = ColorUtils.HSLToColor(tHSL);
+        String rgb4 = Color.red(analogo4)+", "+Color.green(analogo4)+", "+Color.blue(analogo4);
+        System.out.println(rgb4);
 
         muestra.setText(rgb);
         muestra.setTextColor(analogo1);
@@ -270,6 +278,7 @@ public class AnalogaActivity extends AppCompatActivity implements View.OnTouchLi
         color2.setText(Color.red(analogo2)+", "+Color.green(analogo2)+", "+Color.blue(analogo2));
         color2.setTextColor(analogo3);
 
+        System.out.println(analogo3);
         color3.setBackgroundColor(analogo3);
         color3.setText(Color.red(analogo3)+", "+Color.green(analogo3)+", "+Color.blue(analogo3));
         color3.setTextColor(analogo4);
