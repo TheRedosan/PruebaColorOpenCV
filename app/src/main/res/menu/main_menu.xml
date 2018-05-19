@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_analogo"
+        android:title="Analogo" />
+    <item
+        android:id="@+id/menu_triada"
+        android:title="Triada" />
+    <item
+        android:id="@+id/menu_tetrada"
+        android:title="Tetrada" />
+    <item
+        android:id="@+id/menu_complementario"
+        android:title="Complementario" />
+    <item
+        android:id="@+id/menu_complementariops"
+        android:title="Complementario P.S." />
+</menu>

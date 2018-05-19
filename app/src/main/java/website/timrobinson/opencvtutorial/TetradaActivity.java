@@ -1,9 +1,8 @@
 package website.timrobinson.opencvtutorial;
 
 import android.graphics.Color;
-import android.support.v4.graphics.ColorUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.graphics.ColorUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -22,7 +21,7 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
-public class TetradaActivity extends AppCompatActivity implements View.OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
+public class TetradaActivity extends Base implements View.OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
 
     //--- VARIABLES Y CONSTANTES -------------------------------------------------------------------
 
@@ -385,4 +384,10 @@ public class TetradaActivity extends AppCompatActivity implements View.OnTouchLi
             }
         }
     };
+
+    //--- MENU -------------------------------------------------------------------
+
+
+
+
 }
