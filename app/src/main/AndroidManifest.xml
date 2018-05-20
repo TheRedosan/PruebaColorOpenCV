@@ -16,21 +16,21 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ComplementarioActivity" />
-        <activity
-            android:name=".TriadaActivity"
-            android:label="@string/title_activity_triada" />
-        <activity android:name=".ComplementariaPorSeparadoActivity" />
-        <activity android:name=".AnalogaActivity">
-
-        </activity>
-        <activity android:name=".TetradaActivity">
+        <activity android:name=".ComplementarioActivity"
+            android:label="@string/title_activity_complementaria">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TriadaActivity"
+            android:label="@string/title_activity_triada" />
+        <activity android:name=".ComplementariaPorSeparadoActivity"
+            android:label="@string/title_activity_complementaria_por_separado"/>
+        <activity android:name=".AnalogaActivity"
+            android:label="@string/title_activity_analoga"/>
+        <activity android:name=".TetradaActivity"
+            android:label="@string/title_activity_tetrada"/>
     </application>
 
 </manifest>

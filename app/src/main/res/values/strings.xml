@@ -11,5 +11,9 @@
     <string name="color4">Color 4:</string>
     <string name="complementario">Color complementario:</string>
     <string name="title_activity_triada">TriadaActivity</string>
+    <string name="title_activity_analoga">AnalogaActivity</string>
+    <string name="title_activity_complementaria">ComplementariaActivity</string>
+    <string name="title_activity_complementaria_por_separado">ComplementariaPorSeparadoActivity</string>
+    <string name="title_activity_tetrada">TetradaActivity</string>
     <string name="title_activity_main">MainActivity</string>
 </resources>

@@ -11,6 +11,10 @@
         {
             "outputFile": "C:\\Users\\alvar\\Desktop\\projecto pruebas\\PruebaColorOpenCV\\libraries\\opencv\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
             "map": []
+        },
+        {
+            "outputFile": "D:\\Proyectos\\Android\\PruebaColorOpenCV\\libraries\\opencv\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": []
         }
     ]
 }

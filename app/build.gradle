@@ -21,9 +21,8 @@ android {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile project(':libraries:opencv')
-    compile project(path: ':openCVLibrary310')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:22.2.0'
+    implementation project(path: ':openCVLibrary310')
 }
