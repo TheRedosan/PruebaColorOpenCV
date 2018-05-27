@@ -11,6 +11,9 @@
         android:id="@+id/menu_tetrada"
         android:title="Tetrada" />
     <item
+        android:id="@+id/menu_cuadrado"
+        android:title="Cuadrado" />
+    <item
         android:id="@+id/menu_complementario"
         android:title="Complementario" />
     <item

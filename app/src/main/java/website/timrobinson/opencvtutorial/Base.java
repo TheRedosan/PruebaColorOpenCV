@@ -368,6 +368,11 @@ public class Base extends AppCompatActivity implements View.OnTouchListener, Cam
                 startActivity(i);
                 break;
             }
+            case R.id.menu_cuadrado:{
+                Intent i = new Intent(this, CuadradoActivity.class);
+                startActivity(i);
+                break;
+            }
         }
         return super.onOptionsItemSelected(item);
 

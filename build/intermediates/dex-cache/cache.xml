@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\c967b550378b8dbbf8d1c23e584d1d7b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Proyectos\Android\301\PruebaColorOpenCV\openCVLibrary310\build\intermediates\intermediate-jars\release\classes.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5b5e74a20437920c1ba3a033651a220211f347c6">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\79322fa5d39da4d5845ec6f842666714\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f46121a7c3b3ba958fc27c39447ae205be23ac4a">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\c967b550378b8dbbf8d1c23e584d1d7b\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.0\931532e953a477f876f2de18c2e7f16eee01078f\constraint-layout-solver-1.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="931532e953a477f876f2de18c2e7f16eee01078f">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\0e2d319caabbba024bdcacffab6142a8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alvar\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        min-sdk-version="22"
+        optimize="true"
+        revision="26.0.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\Proyectos\Android\301\PruebaColorOpenCV\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+
+</items>

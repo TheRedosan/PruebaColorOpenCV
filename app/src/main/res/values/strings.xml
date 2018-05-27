@@ -2,7 +2,7 @@
     <string name="app_name">Prueba putos colores</string>
     <string name="coordenadas">X: 0, Y: 0</string>
     <string name="color">Color Hex:  Color RGB:</string>
-    <string name="muestra">Color Identificado:</string>
+    <string name="muestra">Original:</string>
     <string name="triada1">Color Triada 1:</string>
     <string name="triada2">Color Triada 2:</string>
     <string name="color1">Color 1:</string>

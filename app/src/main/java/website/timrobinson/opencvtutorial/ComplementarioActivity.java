@@ -12,6 +12,7 @@ public class ComplementarioActivity extends Base{
     //--- VARIABLES Y CONSTANTES -------------------------------------------------------------------
     TextView tvComplementario;
     TextView complementario;
+    int rgbComplementario;
 
     //--- METODOS -------------------------------------------------------------------
     @Override
@@ -25,6 +26,17 @@ public class ComplementarioActivity extends Base{
         complementario = (TextView) findViewById(R.id.complementario);
     }
 
+    private void setText() {
+        muestra.setTextColor(rgbComplementario);
+
+        complementario.setBackgroundColor(rgbComplementario);
+        complementario.setText(Integer.toString(rgbComplementario));
+
+        complementario.setText(Color.red(rgbComplementario)+", "+Color.green(rgbComplementario)+", "+Color.blue(rgbComplementario));
+        complementario.setTextColor(Color.rgb((int)r, (int)g, (int)b));
+    }
+
+    //*** ALGORITMO ******************************************************************
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         super.onTouch(v, event);
@@ -35,17 +47,9 @@ public class ComplementarioActivity extends Base{
             tHSL[0]+= 180;
         }
 
-        int rgbComplementario = ColorUtils.HSLToColor(tHSL);
+        rgbComplementario = ColorUtils.HSLToColor(tHSL);
 
-        complementario.setBackgroundColor(rgbComplementario);
-
-        complementario.setText(Integer.toString(rgbComplementario));
-
-        muestra.setTextColor(rgbComplementario);
-
-        complementario.setText(Color.red(rgbComplementario)+", "+Color.green(rgbComplementario)+", "+Color.blue(rgbComplementario));
-        complementario.setTextColor(Color.rgb((int)r, (int)g, (int)b));
-
+        setText();
         return false;
     }
 
